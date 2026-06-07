@@ -1,0 +1,29 @@
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+*.tfvars.json
+override.tf
+override.tf.json
+.terraform.lock.hcl
+
+# Wizard output (contains environment-specific answers)
+deploy/answers.json
+
+# Node
+node_modules/
+dist/
+
+# .NET
+bin/
+obj/
+
+# Env / secrets
+.env
+*.pem
+*.key
+
+# OS
+.DS_Store
+Thumbs.db

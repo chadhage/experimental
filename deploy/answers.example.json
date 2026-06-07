@@ -1,0 +1,14 @@
+{
+  "instanceName": "contoso-prod",
+  "isolation": "C",
+  "designerSurface": "web",
+  "region": "eastus2",
+  "tier": "isolated",
+  "cloud": "azure",
+  "tenantId": "00000000-0000-0000-0000-000000000000",
+  "subscriptionId": "11111111-1111-1111-1111-111111111111",
+  "dataSourceType": "sqlserver",
+  "dataConnectivity": "ipsec",
+  "dataSourceHost": "sql.contoso.com",
+  "endpointExposure": "private"
+}

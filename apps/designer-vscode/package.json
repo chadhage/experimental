@@ -1,0 +1,23 @@
+{
+  "name": "query-designer-vscode",
+  "displayName": "Query Designer",
+  "description": "Design and publish data query endpoints from VS Code (sample designer surface).",
+  "version": "0.1.0",
+  "publisher": "your-org",
+  "engines": { "vscode": "^1.90.0" },
+  "categories": ["Other"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      { "command": "queryDesigner.openDesigner", "title": "Query Designer: Open Designer" },
+      { "command": "queryDesigner.publish", "title": "Query Designer: Publish Endpoint" }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.90.0",
+    "typescript": "^5.5.4"
+  }
+}

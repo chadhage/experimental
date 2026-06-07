@@ -1,0 +1,44 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build-api:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+      - run: dotnet build apps/api/QueryDesigner.Api.csproj -c Release
+
+  build-web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: npm install
+        working-directory: apps/designer-web
+      - run: npm run build
+        working-directory: apps/designer-web
+
+  terraform-validate:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        env: [shared, isolated, byo]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+      - name: terraform fmt
+        run: terraform fmt -check -recursive infra
+        continue-on-error: true
+      - name: terraform init/validate
+        run: |
+          terraform -chdir=infra/environments/${{ matrix.env }} init -backend=false
+          terraform -chdir=infra/environments/${{ matrix.env }} validate
