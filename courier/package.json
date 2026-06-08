@@ -1,0 +1,14 @@
+{
+  "name": "courier",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Guided deployment wizard for sample workloads to Azure, AWS, or GCP",
+  "main": "wizard.js",
+  "bin": {
+    "courier": "wizard.js"
+  },
+  "scripts": {
+    "start": "node wizard.js",
+    "web": "node web/server.js"
+  }
+}

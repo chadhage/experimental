@@ -1,29 +1,11 @@
-# Terraform
-**/.terraform/*
-*.tfstate
-*.tfstate.*
-crash.log
-*.tfvars.json
-override.tf
-override.tf.json
-.terraform.lock.hcl
-
-# Wizard output (contains environment-specific answers)
-deploy/answers.json
-
-# Node
 node_modules/
-dist/
-
-# .NET
-bin/
-obj/
-
-# Env / secrets
 .env
-*.pem
-*.key
-
-# OS
+helloworld/services/api/node_modules/
+helloworld/services/api/.env
+diceroll/services/api/node_modules/
+diceroll/services/api/.env
+courier/out/
+*.log
+.vscode/
 .DS_Store
 Thumbs.db

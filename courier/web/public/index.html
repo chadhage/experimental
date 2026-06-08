@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Courier — Guided Deployment</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="hero">
+        <h1>Courier</h1>
+        <p class="subtitle">Guided deployment for sample workloads to Azure, AWS, or GCP.</p>
+      </header>
+
+      <ol id="progress" class="progress" aria-label="Deployment steps"></ol>
+
+      <section class="panel">
+        <div class="step-head">
+          <span class="step-num" id="stepNum">1</span>
+          <h2 id="stepTitle">Step</h2>
+        </div>
+        <div id="stepBody" class="step-body"></div>
+        <p id="stepError" class="step-error" role="alert"></p>
+      </section>
+
+      <div class="nav">
+        <button type="button" id="backBtn" class="ghost">Back</button>
+        <span id="status" class="status"></span>
+        <button type="button" id="nextBtn">Next</button>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
