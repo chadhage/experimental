@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello World Microservice</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <h1>Hello World Microservice</h1>
+      <p class="subtitle">Invoke the API and view persisted invocation history.</p>
+
+      <section class="panel">
+        <h2>Invoke</h2>
+        <div class="row">
+          <label for="invokedBy">Invoked by</label>
+          <input id="invokedBy" type="text" placeholder="Enter your name" maxlength="200" />
+          <button id="invokeBtn">Send</button>
+        </div>
+        <pre id="result">No invocation yet.</pre>
+      </section>
+
+      <section class="panel">
+        <div class="header-row">
+          <h2>Recent Invocations</h2>
+          <button id="refreshBtn">Refresh</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Invoked By</th>
+              <th>Invoked At (UTC)</th>
+              <th>Client IP</th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
